@@ -6,12 +6,22 @@ const typeDefs = `
         feed: [Link!]!
     }
 
+    type Mutation {
+        post(url: String!, description: String!): Link!
+    }
+
     type Link {
         id: ID!
         description: String!
         url: String!
     }
 `
+
+let links = [{
+    id: 'link-0',
+    url: 'www.howtograpql.com',
+    description: 'Fullstack tutorial for GraphQL'
+}]
 
 const resolvers = {
     Query: {
